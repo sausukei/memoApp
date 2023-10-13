@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Box from './components/box'
+import ListUI from './components/memoUI'
+import {createFile, dupliCheck} from './components/makejson';
+
+
+let memoData = {title: "今日の買い物", content: "にんじん、じゃがいも、玉ねぎ"};
+
+let memoDataJSON = JSON.stringify(memoData);
+
+console.log(memoDataJSON);
+
+
+function App() {
+  return (
+    <div className="App">
+      <Box />
+      <h1>とりあえずここにメモ帳アプリを作ります</h1>
+      <button onClick={createFile(memoData, memoDataJSON)}>json</button>
+
+    </div>
+   
+  );
+}
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <App />
+  <ListUI />
+  
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
