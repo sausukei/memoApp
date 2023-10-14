@@ -24,6 +24,6 @@ const dupliCheck = (pathName) => {
     }
 };
 
-createFile('memo.json', memoData)
+// createFile('memo.json', memoData)
 
 export default createFile;

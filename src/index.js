@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Box from './components/box'
 import ListUI from './components/memoUI'
-import {createFile, dupliCheck} from './components/makejson';
+// import {createFile, dupliCheck} from './components/makejson';
 
 
 let memoData = {title: "今日の買い物", content: "にんじん、じゃがいも、玉ねぎ"};
@@ -13,12 +13,15 @@ let memoDataJSON = JSON.stringify(memoData);
 console.log(memoDataJSON);
 
 
-function App() {
+function Frame() {
   return (
     <div className="App">
-      <Box />
-      <h1>とりあえずここにメモ帳アプリを作ります</h1>
-      <button onClick={createFile(memoData, memoDataJSON)}>json</button>
+     
+      <div className='mainFrame'>
+        <Box />
+        <h1>とりあえずここにメモ帳アプリを作ります</h1>
+        <button onClick={console.log(memoData)}>aa</button>
+      </div>
 
     </div>
    
@@ -30,7 +33,7 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <App />
+  <Frame />
   <ListUI />
   
   </React.StrictMode>

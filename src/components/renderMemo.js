@@ -10,9 +10,9 @@ class JSONRender extends React.Component{
     }
 
     titleList(list) {
-        const titleList = list.map((title, index) => {
+        const titleList = list.map((title) => {
             <li>
-                {title.name}
+                {title}
             </li>
         });
 

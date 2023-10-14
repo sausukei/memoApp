@@ -25,6 +25,10 @@ code {
   padding: 0;
 }
 
+.mainFrame {
+  border: solid 3px #000000;
+}
+
 /* .memoTitle {
   padding: 0.5em 1em;
   margin: 2em 0;
