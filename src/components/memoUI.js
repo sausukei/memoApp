@@ -31,13 +31,13 @@ const ListUI = () =>{
         
         
         return (
-            <div>
-            <table className="box" ref = {myRef} >
+            <div className="box">
+            <table  ref = {myRef} >
                 <RenderMemo />
             </table>
-            <div>
+            {/* <div>
                 <AddButton name ="新規作成" click={clicking}/>
-            </div>
+            </div> */}
             </div>
 
         );

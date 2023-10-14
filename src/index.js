@@ -16,11 +16,13 @@ console.log(memoDataJSON);
 function Frame() {
   return (
     <div className="App">
-     
       <div className='mainFrame'>
-        <Box />
-        <h1>とりあえずここにメモ帳アプリを作ります</h1>
-        <button onClick={console.log(memoData)}>aa</button>
+        <h1>ここがメモ帳アプリ</h1>
+        
+        <Box name = "とりあえずここにメモ帳を作ります"/>
+        <ListUI />
+        <button className = "create-btn" onClick={console.log(memoData)}>+</button>
+       
       </div>
 
     </div>
@@ -34,7 +36,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <Frame />
-  <ListUI />
+ 
   
   </React.StrictMode>
 );
