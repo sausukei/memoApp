@@ -1,38 +1,22 @@
 import React from "react";
 import {render} from "react-dom";
 
-import "../memo.json";
+import "./memo.json";
 
-class JSONRender extends React.Component{
-    constructor() {
-        super();
-        this.state = {title: ""};
-    }
+function RenderMemo() {
+    const requestURL =
+      "./memo.json";
+    const request = new Request(requestURL);
+  
+    const response = fetch(request);
+    const superHeroes = response.json();
+  
+    return(
+        console.log(superHeroes)
+    );
+        
+       
 
-    titleList(list) {
-        const titleList = list.map((title) => {
-            <li>
-                {title}
-            </li>
-        });
+  }
 
-        return <ul>{titleList}</ul>;
-    }
-
-    render() {
-        console.log(this.state.title);
-        return (
-            <div>
-                <button onClick={this.getJson}>Get Json </button>
-                {this.titleList(this.state.title)}
-            </div>
-        );
-    }
-
-    getJson = () => {
-        const url = "../memo.json"
-        console.log(url);
-
-
-    }
-}
+export default RenderMemo;

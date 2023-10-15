@@ -31,8 +31,8 @@ const ListUI = () =>{
         
         
         return (
-            <div className="box">
-            <table  ref = {myRef} >
+            <div >
+            <table className="box"  ref = {myRef} >
                 <RenderMemo />
             </table>
             {/* <div>
