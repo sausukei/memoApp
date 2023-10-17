@@ -7,7 +7,13 @@ function RenderMemo() {
    
   
     return(
-        <h1>にんじん、玉ねぎ、ジャガイモ</h1>
+        <div>
+            <form>
+                <input type="text" />
+            </form>
+             <h1>にんじん、じゃがいも、玉ねぎ</h1>
+        </div>
+       
     );
         
        

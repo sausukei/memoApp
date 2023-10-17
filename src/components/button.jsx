@@ -1,5 +1,5 @@
 const clicking = () => {
-    
+    console.log("HELLO");
 }
 
 export default function AddButton(props) {

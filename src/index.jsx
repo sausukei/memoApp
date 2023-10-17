@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Box from './components/box'
 import ListUI from './components/memoUI' 
-import RenderMemo from './components/renderMemo';
+import RenderMemo from './components/RenderMemo';
 import './components/memo.json'
 
 // import {createFile, dupliCheck} from './components/makejson';
@@ -15,9 +15,7 @@ import './components/memo.json'
 
 // console.log(memoDataJSON);
 
-const fs = require('fs-extra')
-const file = './componets/memo.json'
-const data = fs.readJSONSync(file)
+
 
 
 function Frame() {
@@ -26,9 +24,10 @@ function Frame() {
       <div className='mainFrame'>
         <h1>ここがメモ帳アプリ</h1>
         
-        {/* <Box name = "とりあえずここにメモ帳を作ります"/> */}
-        <Box name = {data}/>
+        <Box name = {<RenderMemo/>}/>
+        {/* <Box name = {data}/> */}
         <ListUI />
+
         <button className = "create-btn">+</button>
        
       </div>
@@ -44,8 +43,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <Frame />
- 
-  {/* <RenderMemo /> */}
   </React.StrictMode>
 );
 
