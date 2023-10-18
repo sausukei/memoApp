@@ -5,13 +5,13 @@ import "./memo.json";
 
 function RenderMemo() {
    
-  
+    const memoContents = "にんじん、じゃがいも、玉ねぎ";
     return(
         <div>
             <form>
-                <input type="text" />
+                <textarea  className= "memo" defaultValue={memoContents} cols="10" rows = "20" maxLength="200"/>
             </form>
-             <h1>にんじん、じゃがいも、玉ねぎ</h1>
+             
         </div>
        
     );

@@ -64,6 +64,19 @@ code {
   bottom: 550px;
 }
 
+.renderArea {
+  display: flex;
+  justify-content: center;
+}
+
+.memo {
+  width: 580px;
+  height: 580px;
+  display: block;
+  margin: 0 auto;
+  font-size: 38px;
+}
+
 
 
 /* .memoTitle {
