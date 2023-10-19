@@ -1,14 +1,16 @@
+import { useState } from "react";
 import React from "react";
-import {render} from "react-dom";
 
 import "./memo.json";
 
-function RenderMemo() {
+function RenderMemo(props) {
    
-    const memoContents = "にんじん、じゃがいも、玉ねぎ";
+    const memoContents=props.content;
+    
+    
     return(
         <div>
-            <form>
+            <form className="renderArea">
                 <textarea  className= "memo" defaultValue={memoContents} cols="10" rows = "20" maxLength="200"/>
             </form>
              
