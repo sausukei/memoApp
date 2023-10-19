@@ -21,6 +21,7 @@ const ListUI = (props) =>{
         const [active, setActive] = useState(props.content[i].content);
         const handleClick = (content) =>{
            console.log("hello")
+           props.name(content)
         }
 
         const memolist = []

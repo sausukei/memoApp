@@ -18,18 +18,20 @@ import RenderMemo from './components/RenderMemo';
 function Frame() {
   const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
   console.log(contents[0])  
-  const content = contents[0].content;
-  const [title, setTitle] = useState("")
+  const [content,setContent] = useState(contents[0].content);
+  const [title, setTitle] = useState(content)
 
   const box = <RenderMemo content={content}/>
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
        
-        <Box name = {box}/>
+        <Box name = {content}/>
+        <ListUI content={contents} name = {setContent}/>
+        
 
         {/* <Box name = {data}/> */}
-        <ListUI content={contents}/>
+       
 
         <button className = "create-btn">+</button>
        
