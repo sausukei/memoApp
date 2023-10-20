@@ -6,7 +6,7 @@ import "./memo.json";
 function RenderMemo(props) {
    
     const memoContents=props.content;
-    
+
     
     return(
         <div>

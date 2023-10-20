@@ -19,9 +19,9 @@ const ListUI = (props) =>{
         const myRef = useRef(null);
         let i = 0;
         const [active, setActive] = useState(props.content[i].content);
-        const handleClick = (content) =>{
-           console.log("hello")
-           props.name(content)
+        const handleClick = async (content) =>{
+ 
+           props.parent(<RenderMemo content={await props.child(content)}/>)
         }
 
         const memolist = []
