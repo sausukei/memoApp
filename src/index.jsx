@@ -5,6 +5,7 @@ import './index.css';
 import Box from './components/box'
 import ListUI from './components/List' 
 import RenderMemo from './components/RenderMemo';
+import Btn from './components/button';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -24,16 +25,11 @@ function Frame() {
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
-       
+
         <Box name = {parent}/>
         <ListUI content={contents} parent= {setParent} child = {setContent}/>
-        
-
-       
-       
-
-        <button className = "create-btn">+</button>
-       
+        <button onClick={console.log(parent)} className = "create-btn">ああ</button>
+        <Btn name = {content}/>
       </div>
 
     </div>
