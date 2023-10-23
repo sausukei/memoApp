@@ -1,20 +1,30 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 
 import "./memo.json";
 
-function RenderMemo(props) {
+const RenderMemo = (props) =>{
    
-    const memoContents=props.content;
+    const [memoContents,setMemo]=useState(props.content);
+    const check = () =>{
+        setMemo(props.content);
+    }
+    
 
+    // useEffect(()=>{
+        
+    // });
     
     return(
-        <div>
-            <form className="renderArea">
-                <textarea  className= "memo" defaultValue={memoContents} cols="10" rows = "20" maxLength="200"/>
-            </form>
+
+        <div className="renderBox" id ="renderBox">
+             <div>
+                <form className="renderArea">
+                    <textarea  className= "memo" defaultValue={memoContents} cols="10" rows = "20" maxLength="200"/>
+                </form>
              
+             </div>
         </div>
+       
        
     );
         

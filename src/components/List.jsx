@@ -18,10 +18,11 @@ import RenderMemo from './RenderMemo';
 const ListUI = (props) =>{
         const myRef = useRef(null);
         let i = 0;
-        const [active, setActive] = useState(props.content[i].content);
-        const handleClick = async (content) =>{
+       
+        const handleClick = (content) =>{
  
-           props.parent(<RenderMemo content={await props.child(content)}/>)
+           props.func(content);
+           console.log("(this is list)"+content)
         }
 
         const memolist = []

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -16,19 +16,24 @@ import Btn from './components/button';
 
 // console.log(memoDataJSON);
 
-function Frame() {
+const Frame = () => {
   const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
   console.log(contents[0])  
   const [content,setContent] = useState( contents[0].content);
-  const [parent, setParent] = useState(<RenderMemo content={content} set = {setContent}/>)
+  const rerender = (e) =>{
+    setContent(e);
+    console.log("clicked"+content)
+    
+  };
+
 
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
 
-        <Box name = {parent}/>
-        <ListUI content={contents} parent= {setParent} child = {setContent}/>
-        <button onClick={console.log(parent)} className = "create-btn">ああ</button>
+        <RenderMemo content={content}/>
+        <ListUI content={contents} func = {rerender}/>
+       
         <Btn name = {content}/>
       </div>
 
