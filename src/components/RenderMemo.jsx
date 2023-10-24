@@ -4,10 +4,11 @@ import "./memo.json";
 
 const RenderMemo = (props) =>{
    
-    const [memoContents,setMemo]=useState(props.content);
-    const check = () =>{
-        setMemo(props.content);
-    }
+    const memoContents = props.content;
+    // const check = () =>{
+    //     // props.setContent(e.target.v alue)
+    //     console.log(memoContents)
+    // }
     
 
     // useEffect(()=>{
@@ -19,8 +20,11 @@ const RenderMemo = (props) =>{
         <div className="renderBox" id ="renderBox">
              <div>
                 <form className="renderArea">
-                    <textarea  className= "memo" defaultValue={memoContents} cols="10" rows = "20" maxLength="200"/>
+                    <textarea  className= "memo" cols="10" rows = "20" maxLength="200" key = {memoContents} defaultValue ={memoContents}/>
                 </form>
+                {/* <h1 onClick={()=>check()}>
+                    {memoContents}
+                </h1> */}
              
              </div>
         </div>
