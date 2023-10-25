@@ -1,5 +1,5 @@
 // この関数を呼び出すことでデータをwebに保存する
-// import React from "react";
+// import React from "react";g
 
 const restore = (key,data,index) =>{
 
