@@ -6,6 +6,7 @@ import Box from './components/box'
 import ListUI from './components/List' 
 import RenderMemo from './components/RenderMemo';
 import Btn from './components/button';
+import restore from './components/restore';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -33,8 +34,8 @@ const Frame = () => {
 
         <RenderMemo content={content} setContent = {setContent}/>
         <ListUI content={contents} func = {setContent}/>
-       
-        <Btn name = {content}/>
+        <Btn name = {content} onClick={()=>{restore(content)}}/>
+        
       </div>
 
     </div>

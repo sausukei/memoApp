@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./memo.json";
+
 
 const RenderMemo = (props) =>{
    

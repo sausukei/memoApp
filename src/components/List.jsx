@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
 import { rerendering } from './rerendering';
+import restore from './restore';
 import RenderMemo from './RenderMemo';
 
 
@@ -19,10 +20,11 @@ const ListUI = (props) =>{
         const myRef = useRef(null);
         let i = 0;
        
-        const handleClick = (content) =>{
+        const handleClick = (key,content) =>{
  
            props.func(content);
            console.log("(this is list)"+content)
+           restore(key,content)
         }
 
         const memolist = []
@@ -31,8 +33,10 @@ const ListUI = (props) =>{
         for (i=0;i<props.content.length;i++){
             const data = <MemoButton title={props.content[i].title} content={props.content[i].content}/>
             const content = props.content[i].content
+            const key = props.content[i].title
+
             
-            memolist.push(<button onClick={()=>handleClick(content)}>{data}</button>)
+            memolist.push(<button onClick={()=>handleClick(key,content)}>{data}</button>)
             
         }
     
@@ -43,6 +47,7 @@ const ListUI = (props) =>{
                 <div className="box">
                     {memolist}
                 </div>
+                
             {/* <div>
                 <AddButton name ="新規作成" click={clicking}/>
             </div> */}
