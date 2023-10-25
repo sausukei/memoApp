@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
-import Box from './box'
+// import ReactDOM from 'react-dom/client';
+// import Box from './box'
 import RenderMemo from './RenderMemo';
 
 
