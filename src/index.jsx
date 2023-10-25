@@ -6,6 +6,7 @@ import ListUI from './components/List'
 import RenderMemo from './components/RenderMemo';
 import Btn from './components/button';
 import restore from './components/restore';
+import firstStorage from './components/firstStorage';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -17,6 +18,7 @@ import restore from './components/restore';
 // console.log(memoDataJSON);
 
 const Frame = () => {
+  firstStorage();
   // const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
   const keys = Object.keys(localStorage)
   const contents =[]
