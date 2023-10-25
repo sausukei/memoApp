@@ -19,6 +19,8 @@ import restore from './components/restore';
 
 const Frame = () => {
   const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
+  const instant = Object(localStorage);
+  const instantContent = Object.values(localStorage);
   console.log(contents[0])  
   const [content,setContent] = useState( contents[0].content);
   // const rerender = () =>{
@@ -26,7 +28,11 @@ const Frame = () => {
   //   console.log("clicked"+content)
     
   // };
-
+  const click = () =>{
+    console.log(instant)
+    console.log(instantContent)
+    // localStorage.clear();
+  }
 
   return (
     <div className="App">
@@ -35,8 +41,11 @@ const Frame = () => {
         <RenderMemo content={content} setContent = {setContent}/>
         <ListUI content={contents} func = {setContent}/>
         <Btn name = {content} onClick={()=>{restore(content)}}/>
+        <button onClick={()=>click()}>ああ</button>
         
+
       </div>
+      
 
     </div>
    
