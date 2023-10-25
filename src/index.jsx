@@ -44,10 +44,11 @@ const Frame = () => {
   const click = () =>{
     console.log(contents)
     console.log(key)
-   
+    
     // console.log(instant)
+    
+    localStorage.clear();
 
-    // localStorage.clear();
     // localStorage.clear();
   }
 
@@ -58,7 +59,7 @@ const Frame = () => {
         <RenderMemo content={content} setContent = {setContent} index = {index} Key={key}/>
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         <Btn name = {content} onClick={()=>{restore(content)}}/>
-        <button onClick={()=>click()}>ああ</button>
+        <button onClick={()=>click()}>clear cash</button>
         
 
       </div>
