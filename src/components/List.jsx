@@ -1,11 +1,11 @@
 // import AddButton from "./button";
-import {useRef} from 'react';
-import React, {useState} from 'react';
+// import {useRef} from 'react';
+import React from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
-import { rerendering } from './rerendering';
+// import { rerendering } from './rerendering';
 import restore from './restore';
-import RenderMemo from './RenderMemo';
+// import RenderMemo from './RenderMemo';
 
 
 // const AddButton = (props) => {
@@ -14,17 +14,16 @@ import RenderMemo from './RenderMemo';
 //     );
 // }
 
-
-
 const ListUI = (props) =>{
-        const myRef = useRef(null);
+        // const myRef = useRef(null);
         let i = 0;
        
-        const handleClick = (key,content) =>{
- 
+        const handleClick = (key,content,index) =>{
            props.func(content);
+           props.index(index);
+           props.Key(key);
            console.log("(this is list)"+content)
-           restore(key,content)
+           restore(key,content,index)
         }
 
         const memolist = []
@@ -34,9 +33,10 @@ const ListUI = (props) =>{
             const data = <MemoButton title={props.content[i].title} content={props.content[i].content}/>
             const content = props.content[i].content
             const key = props.content[i].title
+            const index = i
 
             
-            memolist.push(<button onClick={()=>handleClick(key,content)}>{data}</button>)
+            memolist.push(<button onClick={()=>handleClick(key,content,index)}>{data}</button>)
             
         }
     

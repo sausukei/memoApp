@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React from "react";
+import restore from "./restore";
 
 
 const RenderMemo = (props) =>{
@@ -11,16 +11,17 @@ const RenderMemo = (props) =>{
     // }
     
 
-    // useEffect(()=>{
-        
-    // });
+    const event=(e)=>{
+        console.log("write")
+        restore(props.Key,e.target.value,props.index)
+    }
     
     return(
 
         <div className="renderBox" id ="renderBox">
              <div>
                 <form className="renderArea">
-                    <textarea  className= "memo" cols="10" rows = "20" maxLength="200" key = {memoContents} defaultValue ={memoContents}/>
+                    <textarea  className= "memo" cols="10" rows = "20" maxLength="200" key = {memoContents} defaultValue ={memoContents} onKeyUp ={(e)=>event(e)}/>
                 </form>
                 {/* <h1 onClick={()=>check()}>
                     {memoContents}

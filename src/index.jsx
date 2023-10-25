@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Box from './components/box'
 import ListUI from './components/List' 
 import RenderMemo from './components/RenderMemo';
 import Btn from './components/button';
@@ -18,19 +17,35 @@ import restore from './components/restore';
 // console.log(memoDataJSON);
 
 const Frame = () => {
-  const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
-  const instant = Object(localStorage);
-  const instantContent = Object.values(localStorage);
+  // const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
+  const keys = Object.keys(localStorage)
+  const contents =[]
+  const [index,setIndex] = useState(0);
+  
+  let i = 0;
+
+  for(i=0;i<keys.length;i++){
+    contents.push(JSON.parse(localStorage.getItem(keys[i])))
+    console.log("get key")
+
+  }
+  // const source = Object.keys(localStorage).forEach((key)=> {instant.push(localStorage.getItem(key))});
+
   console.log(contents[0])  
-  const [content,setContent] = useState( contents[0].content);
+  const [content,setContent] = useState(contents[0].content);
+  const [key, setKey] = useState(contents[0].title);
   // const rerender = () =>{
   //   setContent(content);
   //   console.log("clicked"+content)
     
   // };
   const click = () =>{
-    console.log(instant)
-    console.log(instantContent)
+    console.log(contents)
+    console.log(key)
+   
+    // console.log(instant)
+
+    // localStorage.clear();
     // localStorage.clear();
   }
 
@@ -38,8 +53,8 @@ const Frame = () => {
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
 
-        <RenderMemo content={content} setContent = {setContent}/>
-        <ListUI content={contents} func = {setContent}/>
+        <RenderMemo content={content} setContent = {setContent} index = {index} Key={key}/>
+        <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         <Btn name = {content} onClick={()=>{restore(content)}}/>
         <button onClick={()=>click()}>ああ</button>
         
