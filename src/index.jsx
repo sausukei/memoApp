@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import ListUI from './components/List' 
 import RenderMemo from './components/RenderMemo';
-import Btn from './components/button';
-import restore from './components/restore';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 
@@ -41,17 +39,7 @@ const Frame = () => {
   //   setContent(content);
   //   console.log("clicked"+content)
     
-  // };
-  const click = () =>{
-    console.log(contents)
-    console.log(key)
-    
-    // console.log(instant)
-    
-    localStorage.clear();
 
-    // localStorage.clear();
-  }
 
   return (
     <div className="App">
