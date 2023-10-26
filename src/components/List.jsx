@@ -4,7 +4,7 @@ import React from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
 // import { rerendering } from './rerendering';
-import restore from './restore';
+// import restore from './restore';
 
 
 // import RenderMemo from './RenderMemo';
