@@ -52,6 +52,18 @@ code {
   
 }
 
+/* .title_bar {
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 150px;
+  position: relative;
+  bottom: 300px;
+  left: 20px;
+  border: solid 3px #000000;
+} */
+
+
 .create-btn {
   width: 30px;
   height: 30px;

@@ -7,6 +7,7 @@ import RenderMemo from './components/RenderMemo';
 import Btn from './components/button';
 import restore from './components/restore';
 import firstStorage from './components/firstStorage';
+import Titlebar from './components/Titlebar';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -56,6 +57,7 @@ const Frame = () => {
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
 
+        <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
         <RenderMemo content={content} setContent = {setContent} index = {index} Key={key}/>
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         <Btn name = {content} onClick={()=>{restore(content)}}/>
