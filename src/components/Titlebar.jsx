@@ -14,7 +14,7 @@ const Titlebar = (props) =>{
 
     const reset = (e) =>{
         console.log("blurd")
-        if(e.target.value==""){
+        if(e.target.value===""){
             
             restore(props.title,props.content,props.index);
             console.log("title=null")
