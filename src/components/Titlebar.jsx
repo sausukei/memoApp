@@ -33,7 +33,7 @@ const Titlebar = (props) =>{
     
     return(
         <div className ="title_bar">
-            <input type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onBlur={(e)=>reset(e)} onFocus={(e)=>set(e)}/>
+            <input type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onBlur={(e)=>reset(e)} onFocus={(e)=>set(e)} maxLength="100"/>
         </div>
     );
 
