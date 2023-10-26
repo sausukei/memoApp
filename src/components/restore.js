@@ -6,13 +6,14 @@ const restore = (key,data,index) =>{
    const stockdata = {
      "title":key,
      "content":data,
+     "index": index
    }
 
    const json = JSON.stringify(stockdata);
 
     localStorage.setItem(index,json);
     // const a = sessionStorage.getItem(data);
-    console.log("stored "+key+data);
+    console.log("stored "+key+data+"index = "+index);
 
    
     

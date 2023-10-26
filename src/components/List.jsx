@@ -5,6 +5,8 @@ import '../index.css'
 import MemoButton from "./MemoButton";
 // import { rerendering } from './rerendering';
 import restore from './restore';
+
+
 // import RenderMemo from './RenderMemo';
 
 
@@ -16,27 +18,26 @@ import restore from './restore';
 
 const ListUI = (props) =>{
         // const myRef = useRef(null);
-        let i = 0;
        
-        const handleClick = (key,content,index) =>{
+       
+        const handleClick = (title,content,index) =>{
+           console.log("thisisindex"+index+title+content)
            props.func(content);
            props.index(index);
-           props.Key(key);
-           console.log("(this is list)"+content)
-           restore(key,content,index)
+           props.Key(title);
+        //    console.log("(this is list)次の要素をストレージに保存します"+"key"+index+"title"+key+"content"+content)
+            
         }
 
         const memolist = []
         
-
+        let i = 0;
         for (i=0;i<props.content.length;i++){
-            const data = <MemoButton title={props.content[i].title} content={props.content[i].content}/>
+            const data = <MemoButton title={props.content[i].title+i} content={props.content[i].content}/>
             const content = props.content[i].content
-            const key = props.content[i].title
-            const index = i
-
-            
-            memolist.push(<button onClick={()=>handleClick(key,content,index)}>{data}</button>)
+            const title = props.content[i].title
+            const index = props.content[i].index
+            memolist.push(<button className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</button>)
             
         }
     

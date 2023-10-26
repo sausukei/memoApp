@@ -21,13 +21,16 @@ const Frame = () => {
   // const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
   const keys = Object.keys(localStorage)
   const contents =[]
-  const [index,setIndex] = useState(0);
+  
   
   let i = 0;
 
   for(i=0;i<keys.length;i++){
-    contents.push(JSON.parse(localStorage.getItem(keys[i])))
-    console.log("get key")
+    contents.push(JSON.parse(localStorage.getItem(i)))
+    console.log("get key"+contents)
+    console.log(contents)
+    
+   
 
   }
   // const source = Object.keys(localStorage).forEach((key)=> {instant.push(localStorage.getItem(key))});
@@ -35,20 +38,26 @@ const Frame = () => {
   console.log(contents[0])  
   const [content,setContent] = useState(contents[0].content);
   const [key, setKey] = useState(contents[0].title);
+  const [index,setIndex] = useState(contents[0].index);
   // const rerender = () =>{
   //   setContent(content);
   //   console.log("clicked"+content)
     
-
+  const reset = () =>{
+    localStorage.clear();
+    
+  }
 
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
-
-        <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
-        <RenderMemo content={content} setContent = {setContent} index = {index} Key={key}/>
+        <div className ="memobox">
+          <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
+          <RenderMemo content={content} index = {index} Key={key}/>
+        </div>
+       
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
-        
+        <button onClick={()=>reset()}>reset</button>
        
         
 
