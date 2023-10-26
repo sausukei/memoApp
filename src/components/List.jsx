@@ -44,8 +44,8 @@ const ListUI = (props) =>{
         console.log(props.content.length)
         
         return (
-            <div className="box">
-                <div >
+            <div className="Listbox">
+                <div className="memolist">
                     {memolist}
                 </div>
             </div>

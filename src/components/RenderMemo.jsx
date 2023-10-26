@@ -21,7 +21,7 @@ const RenderMemo = (props) =>{
         <div className="renderBox" id ="renderBox">
              <div>
                 <form className="renderArea">
-                    <textarea  className= "memo" cols="10" rows = "20" maxLength="100" key = {memoContents} defaultValue ={memoContents} onKeyUp ={(e)=>event(e)}/>
+                    <textarea  className= "memo" cols="10" rows = "20" maxLength="1000" key = {memoContents} defaultValue ={memoContents} onKeyUp ={(e)=>event(e)}/>
                 </form>
                 {/* <h1 onClick={()=>check()}>
                     {memoContents}

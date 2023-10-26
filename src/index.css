@@ -67,34 +67,34 @@ code {
   font-size: 16px;
 } 
 
-.title_bar{
+.title_box{
   width: 100%;
   justify-content: center;
 }
 
-.title_box{
+.title_ber{
   width: 80%;
   display: block;
   margin: 0 auto;
   font-size: 38px;
 }
 
-.box {
-  border: solid 3px blue;
-  background: #2eb883;
-  width:80%
+.Listbox {
+
+  width:100%;
+  justify-content: center;
 } 
 
 .memolist{
-  
+  border: solid 3px blue;
+  background: #2eb883;
   width: 80%;
-
+  display: block;
+  margin: 0 auto;
 }
 
-.title_enter{
-  margin: 0%;
-}
 
 .list_btn{
   display: flex;
+
 }
