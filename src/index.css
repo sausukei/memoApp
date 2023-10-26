@@ -54,12 +54,10 @@ code {
   
 } */
 
-
-
-.renderArea {
+.mainFrame{
   width: 100%;
   justify-content: center;
-} 
+}
 
 .memo {
   width: 80%;
@@ -73,6 +71,7 @@ code {
   width: 100%;
   justify-content: center;
 }
+
 .title_box{
   width: 80%;
   display: block;
@@ -83,13 +82,15 @@ code {
 .box {
   border: solid 3px blue;
   background: #2eb883;
-  width: 300px;
+  width:80%
 } 
 
+.memolist{
+  
+  width: 80%;
 
-.title_box{
-  margin: 0%;
 }
+
 .title_enter{
   margin: 0%;
 }
