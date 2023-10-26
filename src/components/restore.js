@@ -3,10 +3,14 @@
 
 const restore = (key,data,index) =>{
 
-   const stockdata = {
+   let stockdata = {
      "title":key,
      "content":data,
      "index": index
+   }
+
+   if(stockdata.title === ""){
+    stockdata.title = "no title";
    }
 
    const json = JSON.stringify(stockdata);

@@ -44,7 +44,11 @@
     -->
     <script>
         const reset = () =>{
-            localStorage.clear();
+            if(window.confirm("リセットしますか？")){
+              localStorage.clear();
+              location.reload();
+            }
+            
             
           }
     </script>
