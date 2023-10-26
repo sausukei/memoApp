@@ -43,10 +43,7 @@ const Frame = () => {
   //   setContent(content);
   //   console.log("clicked"+content)
     
-  const reset = () =>{
-    localStorage.clear();
-    
-  }
+
 
   return (
     <div className="App">
@@ -57,7 +54,7 @@ const Frame = () => {
         </div>
        
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
-        <button onClick={()=>reset()}>reset</button>
+        
        
         
 

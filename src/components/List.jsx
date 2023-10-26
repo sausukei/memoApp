@@ -48,10 +48,6 @@ const ListUI = (props) =>{
                 <div className="box">
                     {memolist}
                 </div>
-                
-            {/* <div>
-                <AddButton name ="新規作成" click={clicking}/>
-            </div> */}
             </div>
 
         );
