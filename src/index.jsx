@@ -60,8 +60,8 @@ const Frame = () => {
         <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
         <RenderMemo content={content} setContent = {setContent} index = {index} Key={key}/>
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
-        <Btn name = {content} onClick={()=>{restore(content)}}/>
-        <button onClick={()=>click()}>clear cash</button>
+        
+       
         
 
       </div>
