@@ -16,26 +16,6 @@ const Titlebar = (props) =>{
     }
 
 
-    // const handleClick=()=>{
-       
-    //     setValue("");
-        
-    // }
-
-    // const reset = (e) =>{
-    //     console.log("blurd")
-    //     if(e.target.value===""){
-            
-    //         restore(props.title,props.content,props.index);
-    //         console.log("title=null")
-    //     }else{
-    //         props.setTitle(e.target.value);
-    //         restore(e.target.value,props.content,props.index);
-    //         console.log("title has text")
-    //     }
-    //     e.target.value = "";
-        
-    // }
 
     const set = (e) =>{
         e.target.value=props.title
@@ -44,7 +24,7 @@ const Titlebar = (props) =>{
     
     return(
         <div className ="title_box">
-            <input className = "title_ber" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onFocus={(e)=>set(e)} maxLength="100" autoFocus={true}/>
+            <input class="form-control form-control-lg" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onFocus={(e)=>set(e)} maxLength="100" autoFocus={true}/>
             {/* <button className = "title_enter" onClick={()=>handleClick()}>保存</button> */}
         </div>
     );

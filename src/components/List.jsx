@@ -3,7 +3,7 @@
 import {React} from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
-import {Button} from 'react-bootstrap';
+
 
 
 //, ButtonToolbar
@@ -47,7 +47,7 @@ const ListUI = (props) =>{
             const title = props.content[i].title
             const index = props.content[i].index
             
-            memolist.push(<Button className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</Button>)
+            memolist.push(<button className = "list_btn" class="btn btn-primary btn-sm rounded-0 mr-2 text-start" onClick={()=>handleClick(title,content,index)}>{data}</button>)
             
         } 
     
@@ -56,14 +56,12 @@ const ListUI = (props) =>{
         
         return (
             <div className="Listbox">
-                <div className="memolist">
-                    
+                <div class="btn-group-vertical" role="group" aria-label="縦積みボタングループ">
+
                     {memolist}
-    
                 </div>
-                <div className="listui">
-                    
-                </div>
+                
+               
             </div>
 
         );

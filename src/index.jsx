@@ -7,7 +7,7 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {Button, Container, Row, Col,Navbar} from 'react-bootstrap';
 import restore from './components/restore';
 import callStorage from './components/callstorage';
 import addMemo from './components/addMemo';
@@ -85,12 +85,6 @@ const Frame = () => {
       <div className="App">
         <div className='mainFrame' id ="mainFrame">
               <Row>
-                <Col xs ={4}>
-                <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-                  <div class="bg-dark p-4">
-                  <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey} setI={setI} I = {I}/>
-                  </div>
-                </div>
 
                 <nav class="navbar navbar-dark bg-dark">
                   <div class="container-fluid">
@@ -99,20 +93,37 @@ const Frame = () => {
                     </button>
                   </div>
                 </nav>
-                 
-                </Col>
-                <Col>
-                  <div className ="memobox">
+                <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+                  <div class="bg-dark p-4">
+                    <Container fluid>
+                      <Col sm md="auto">
+                      <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey} setI={setI} I = {I}/>
+                      </Col>
+                      <Col sm md="auto">
+                        <button class = "btn btn-success"onClick={()=>add()}>add memo</button>
+                        <button class = "btn btn-danger"onClick={()=>del()}>delete memo</button>
+                        <button class = "btn btn-secondary" onClick={()=>{modeSwitch()}}>{TFname}</button>
+                      
+                      </Col>
+                   
+                    </Container>
+               
+                  </div>
+                </div>
+
+                
+
+                <Row>
+                  <div>
 
 
                       {title}
-
                       {memo}
 
 
                   </div>
-                </Col>
-                
+                </Row>
+       
 
               </Row>
 
@@ -125,10 +136,11 @@ const Frame = () => {
 
             </div>
             <div className = "utils">
-                  <Button bsStyle="success" onClick={()=>add()}>add memo</Button>
-                  <Button bsStyle="success" onClick={()=>del()}>delete memo</Button>
-                  <Button bsStyle="success" onClick={()=>{modeSwitch()}}>{TFname}</Button>
-
+                  
+                  {/* <div className = "colorChanger">
+                  <label for="exampleColorInput" class="form-label">Color picker</label>
+                  <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"></input>
+                  </div> */}
             </div>
          
           </div>
