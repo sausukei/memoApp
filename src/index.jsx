@@ -8,6 +8,8 @@ import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
 import {Button} from 'react-bootstrap';
+import restore from './components/restore';
+import callStorage from './components/callstorage';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -49,7 +51,7 @@ const Frame = () => {
   const [TF,setTF] = useState(true)
   const [TFname, setTFname] = useState("markdownモードにする");
   if(TF){
-    title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
+    title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key} setMemo = {setContent}/>
     memo = <RenderMemo content={content} index = {index} Key={key}/>
     
     
@@ -60,12 +62,21 @@ const Frame = () => {
   }
 
   const modeSwitch = ()=>{
+    let instant = callStorage(index);
+    console.log(instant);
+    
     setTF(!TF)
     if(TF === true){
       setTFname("memoモードにする");
+      setContent(instant.content);
+      setKey(instant.title);
+      setIndex(instant.index);
     }else{
       setTFname("markdownモードにする");
+    
+
     }
+    restore(key,content,index)
   }
 
   return (
