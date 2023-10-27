@@ -7,6 +7,7 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
+import {Button} from 'react-bootstrap';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -46,11 +47,25 @@ const Frame = () => {
   let memo
   let title
   const [TF,setTF] = useState(true)
+  const [TFname, setTFname] = useState("markdownモードにする");
   if(TF){
     title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
     memo = <RenderMemo content={content} index = {index} Key={key}/>
+    
+    
+
   }else{
     memo = <RenderMD title = {key} content={content}/>
+    
+  }
+
+  const modeSwitch = ()=>{
+    setTF(!TF)
+    if(TF == true){
+      setTFname("memoモードにする");
+    }else{
+      setTFname("markdownモードにする");
+    }
   }
 
   return (
@@ -67,7 +82,10 @@ const Frame = () => {
        
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         
-       <button className ="TF-btn" onClick={()=>{setTF(!TF)}}>Markdownモードに切り替え</button>
+   
+        <Button bsStyle="success"  className = "tfbtn" onClick={()=>{modeSwitch()}}>{TFname}</Button>
+
+          
         
 
       </div>

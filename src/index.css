@@ -1,13 +1,8 @@
-/* body {
+body {
   margin: 0;
   
   position: relative;
   justify-content: center;
-} */
-
-a {
-  position: absolute;
-  bottom: 0;
 }
 
 /* .reset_box{
@@ -70,6 +65,16 @@ code {
   font-size: 16px;
 } 
 
+.markdown {
+  width: 80%;
+  
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  border: solid 3px black;
+  
+}
+
 .title_box{
   width: 100%;
   justify-content: center;
@@ -90,8 +95,7 @@ code {
 
 .memolist{
   border: solid 3px 
-  blue;
-  background: #2eb883;
+  black;
   width: 80%;
   display: block;
   margin: 0 auto;
@@ -103,4 +107,10 @@ code {
   
 }
 
+.tfbtn{
+  
+  display: block;
+  margin: 3%;
+  
+}
 

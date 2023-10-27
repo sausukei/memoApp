@@ -11,7 +11,7 @@ const RenderMD=(props)=>{
     const markdown = "# "+title+"\n"+content;
 
     return (
-        <div className ="memo">
+        <div className ="markdown">
             <Markdown>
                 {markdown}
                 

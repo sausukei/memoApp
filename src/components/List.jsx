@@ -3,6 +3,8 @@
 import React from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
+import {Button} from 'react-bootstrap';
+//, ButtonToolbar
 // import { rerendering } from './rerendering';
 // import restore from './restore';
 
@@ -37,7 +39,7 @@ const ListUI = (props) =>{
             const content = props.content[i].content
             const title = props.content[i].title
             const index = props.content[i].index
-            memolist.push(<button className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</button>)
+            memolist.push(<Button bsStyle="success" className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</Button>)
             
         }
     
