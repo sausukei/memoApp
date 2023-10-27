@@ -7,10 +7,11 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
-import {Button, ButtonToolbar} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import restore from './components/restore';
 import callStorage from './components/callstorage';
 import addMemo from './components/addMemo';
+import { Navbar, Nav } from 'react-bootstrap';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -98,6 +99,20 @@ const Frame = () => {
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
+
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Brand href="#home">
+                    SampleApp
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar >
         <div className ="memobox">
           
 
