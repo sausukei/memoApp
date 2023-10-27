@@ -7,9 +7,20 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
-import {Button} from 'react-bootstrap';
+import {Button, ButtonToolbar} from 'react-bootstrap';
 import restore from './components/restore';
 import callStorage from './components/callstorage';
+import addMemo from './components/addMemo';
+
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBIcon,
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -25,7 +36,7 @@ const Frame = () => {
   // const contents = [{"title":"new memo","content":"contents was loaded"},{"title":"買い物","content":"にんじん、ジャガイモ、玉ねぎ"},{"title":"期末テスト","content":"数学、電気"}]
   const keys = Object.keys(localStorage)
   const contents =[]
-  
+
   
   let i = 0;
 
@@ -37,6 +48,7 @@ const Frame = () => {
    
 
   }
+  const [I,setI] = useState(i);
   // const source = Object.keys(localStorage).forEach((key)=> {instant.push(localStorage.getItem(key))});
 
   console.log(contents[0])  
@@ -79,6 +91,20 @@ const Frame = () => {
     restore(key,content,index)
   }
 
+    const add = () =>{
+      setI(I+1);
+      addMemo(I);
+    
+    
+  }
+
+      const del = () =>{
+          localStorage.removeItem(I);
+          setI(I-1);
+          console.log(I);
+          
+      }
+
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
@@ -91,11 +117,22 @@ const Frame = () => {
           
         </div>
        
-        <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
+        <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey} setI={setI} I = {I}/>
         
-   
-        <Button bsStyle="success"  className = "tfbtn" onClick={()=>{modeSwitch()}}>{TFname}</Button>
+    
+        <div className = "utils">
+          <Button bsStyle="success" onClick={()=>add()}>add memo</Button>
+          <Button bsStyle="success" onClick={()=>del()}>delete memo</Button>
+          <Button bsStyle="success" onClick={()=>{modeSwitch()}}>{TFname}</Button>
 
+        </div>
+
+          
+  
+          
+
+        
+        
           
         
 

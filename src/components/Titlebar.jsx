@@ -12,7 +12,9 @@ const Titlebar = (props) =>{
         // }
 
         restore(value,props.content,props.index);
+        
     }
+
 
     // const handleClick=()=>{
        
@@ -37,11 +39,12 @@ const Titlebar = (props) =>{
 
     const set = (e) =>{
         e.target.value=props.title
+        
     }
     
     return(
         <div className ="title_box">
-            <input className = "title_ber" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onFocus={(e)=>set(e)}maxLength="100" autoFocus={true}/>
+            <input className = "title_ber" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onFocus={(e)=>set(e)} maxLength="100" autoFocus={true}/>
             {/* <button className = "title_enter" onClick={()=>handleClick()}>保存</button> */}
         </div>
     );

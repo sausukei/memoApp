@@ -1,9 +1,11 @@
 // import AddButton from "./button";
 // import {useRef} from 'react';
-import React from 'react';
+import {React} from 'react';
 import '../index.css'
 import MemoButton from "./MemoButton";
 import {Button} from 'react-bootstrap';
+
+
 //, ButtonToolbar
 // import { rerendering } from './rerendering';
 // import restore from './restore';
@@ -20,7 +22,7 @@ import {Button} from 'react-bootstrap';
 
 const ListUI = (props) =>{
         // const myRef = useRef(null);
-       
+        
        
         const handleClick = (title,content,index) =>{
            console.log("thisisindex"+index+title+content)
@@ -33,24 +35,34 @@ const ListUI = (props) =>{
             
         }
 
+ 
+    
+
         const memolist = []
-        
         let i = 0;
+
         for (i=0;i<props.content.length;i++){
             const data = <MemoButton title={props.content[i].title} content={props.content[i].content}/>
             const content = props.content[i].content
             const title = props.content[i].title
             const index = props.content[i].index
+            
             memolist.push(<Button bsStyle="success" className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</Button>)
             
-        }
+        } 
     
         console.log(props.content.length)
+        
         
         return (
             <div className="Listbox">
                 <div className="memolist">
+                    
                     {memolist}
+    
+                </div>
+                <div className="listui">
+                    
                 </div>
             </div>
 
