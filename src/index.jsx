@@ -61,7 +61,7 @@ const Frame = () => {
 
   const modeSwitch = ()=>{
     setTF(!TF)
-    if(TF == true){
+    if(TF === true){
       setTFname("memoモードにする");
     }else{
       setTFname("markdownモードにする");
