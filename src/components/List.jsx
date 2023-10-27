@@ -47,7 +47,7 @@ const ListUI = (props) =>{
             const title = props.content[i].title
             const index = props.content[i].index
             
-            memolist.push(<Button bsStyle="success" className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</Button>)
+            memolist.push(<Button className = "list_btn" onClick={()=>handleClick(title,content,index)}>{data}</Button>)
             
         } 
     

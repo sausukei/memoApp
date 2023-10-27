@@ -7,20 +7,11 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
-import {Button} from 'react-bootstrap';
+import {Button, Container, Row, Col} from 'react-bootstrap';
 import restore from './components/restore';
 import callStorage from './components/callstorage';
 import addMemo from './components/addMemo';
-import { Navbar, Nav } from 'react-bootstrap';
 
-// import {createFile, dupliCheck} from './components/makejson';
-
-
-// let memoData = {title: "今日の買い物", content: "にんじん、じゃがいも、玉ねぎ"};
-
-// let memoDataJSON = JSON.stringify(memoData);
-
-// console.log(memoDataJSON);
 
 const Frame = () => {
   firstStorage();
@@ -34,12 +25,10 @@ const Frame = () => {
   for(i=0;i<keys.length;i++){
     contents.push(JSON.parse(localStorage.getItem(i)))
     console.log("get key"+contents)
-    console.log(contents)
-    
-   
-
   }
+
   const [I,setI] = useState(i);
+  console.log("今のIは"+i)
   // const source = Object.keys(localStorage).forEach((key)=> {instant.push(localStorage.getItem(key))});
 
   console.log(contents[0])  
@@ -53,20 +42,16 @@ const Frame = () => {
   let title
   const [TF,setTF] = useState(true)
   const [TFname, setTFname] = useState("markdownモードにする");
+
   if(TF){
     title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key} setMemo = {setContent}/>
     memo = <RenderMemo content={content} index = {index} Key={key}/>
-    
-    
-
   }else{
     memo = <RenderMD title = {key} content={content}/>
-    
   }
 
   const modeSwitch = ()=>{
     let instant = callStorage(index);
-    console.log(instant);
     
     setTF(!TF)
     if(TF === true){
@@ -77,74 +62,77 @@ const Frame = () => {
     }else{
       setTFname("markdownモードにする");
     
-
     }
+
     restore(key,content,index)
   }
 
     const add = () =>{
-      setI(I+1);
       addMemo(I);
-    
-    
-  }
+      setI(I+1);
+      console.log("add"+I)
+    }
 
-      const del = () =>{
-          localStorage.removeItem(I);
-          setI(I-1);
-          console.log(I);
-          
-      }
+    const del = () =>{
+      localStorage.removeItem(I-1);
+      setI(I-1);
+      console.log("del"+I);
+    }
 
   return (
-    <div className="App">
-      <div className='mainFrame' id ="mainFrame">
 
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
-                    SampleApp
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar >
-        <div className ="memobox">
-          
+    <Container fluid>
+      <div className="App">
+        <div className='mainFrame' id ="mainFrame">
+              <Row>
+                <Col xs ={4}>
+                <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+                  <div class="bg-dark p-4">
+                  <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey} setI={setI} I = {I}/>
+                  </div>
+                </div>
 
-          {title}
-          {memo}
-   
-          
-        </div>
+                <nav class="navbar navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </div>
+                </nav>
+                 
+                </Col>
+                <Col>
+                  <div className ="memobox">
+
+
+                      {title}
+
+                      {memo}
+
+
+                  </div>
+                </Col>
+                
+
+              </Row>
+
        
-        <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey} setI={setI} I = {I}/>
+              
         
     
-        <div className = "utils">
-          <Button bsStyle="success" onClick={()=>add()}>add memo</Button>
-          <Button bsStyle="success" onClick={()=>del()}>delete memo</Button>
-          <Button bsStyle="success" onClick={()=>{modeSwitch()}}>{TFname}</Button>
-
-        </div>
-
-          
-  
-          
-
-        
-        
-          
+              
         
 
-      </div>
-      
+            </div>
+            <div className = "utils">
+                  <Button bsStyle="success" onClick={()=>add()}>add memo</Button>
+                  <Button bsStyle="success" onClick={()=>del()}>delete memo</Button>
+                  <Button bsStyle="success" onClick={()=>{modeSwitch()}}>{TFname}</Button>
 
-    </div>
+            </div>
+         
+          </div>
+        </Container>
    
   );
 }
