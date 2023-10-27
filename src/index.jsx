@@ -42,20 +42,31 @@ const Frame = () => {
   // const rerender = () =>{
   //   setContent(content);
   //   console.log("clicked"+content)
-    
-
+  let memo
+  let title
+  const [TF,setTF] = useState(true)
+  if(TF){
+    title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
+    memo = <RenderMemo content={content} index = {index} Key={key}/>
+  }else{
+    memo = "false"
+  }
 
   return (
     <div className="App">
       <div className='mainFrame' id ="mainFrame">
         <div className ="memobox">
-          <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
-          <RenderMemo content={content} index = {index} Key={key}/>
+          
+
+          {title}
+          {memo}
+   
+          
         </div>
        
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         
-       
+       <button onClick={()=>{setTF(!TF)}}>TFボタン</button>
         
 
       </div>
