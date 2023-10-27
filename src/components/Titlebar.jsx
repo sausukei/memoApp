@@ -23,6 +23,7 @@ const Titlebar = (props) =>{
         //     restore(e.target.value,props.content,props.index);
         // }
         setValue(props.title);
+        props.setTitle(value)
         restore(value,props.content,props.index);
         
         
