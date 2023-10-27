@@ -12,16 +12,6 @@ import restore from './components/restore';
 import callStorage from './components/callstorage';
 import addMemo from './components/addMemo';
 
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBIcon,
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBBtn
-} from 'mdb-react-ui-kit';
-
 // import {createFile, dupliCheck} from './components/makejson';
 
 
