@@ -7,7 +7,7 @@ import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
 import RenderMD from './components/RenderMD';
-import {Button, Container, Row, Col,Navbar} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import restore from './components/restore';
 import callStorage from './components/callstorage';
 import addMemo from './components/addMemo';
