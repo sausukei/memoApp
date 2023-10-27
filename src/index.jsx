@@ -6,6 +6,7 @@ import ListUI from './components/List'
 import RenderMemo from './components/RenderMemo';
 import firstStorage from './components/firstStorage';
 import Titlebar from './components/Titlebar';
+import RenderMD from './components/RenderMD';
 
 // import {createFile, dupliCheck} from './components/makejson';
 
@@ -49,7 +50,7 @@ const Frame = () => {
     title = <Titlebar setTitle = {setKey} index = {index} content = {content} title = {key}/>
     memo = <RenderMemo content={content} index = {index} Key={key}/>
   }else{
-    memo = "false"
+    memo = <RenderMD title = {key} content={content}/>
   }
 
   return (
@@ -66,7 +67,7 @@ const Frame = () => {
        
         <ListUI content={contents} func = {setContent} index = {setIndex} Key={setKey}/>
         
-       <button onClick={()=>{setTF(!TF)}}>TFボタン</button>
+       <button className ="TF-btn" onClick={()=>{setTF(!TF)}}>Markdownモードに切り替え</button>
         
 
       </div>
