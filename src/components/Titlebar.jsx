@@ -10,21 +10,34 @@ const Titlebar = (props) =>{
         // if(e.target.value!=""){
         //     restore(e.target.value,props.content,props.index);
         // }
-
+        
         restore(value,props.content,props.index);
         
-    }
-
-
-
-    const set = (e) =>{
-        e.target.value=props.title
         
     }
+
+
+
+    const Bset = (e) =>{
+        // if(e.target.value!=""){
+        //     restore(e.target.value,props.content,props.index);
+        // }
+        setValue(props.title);
+        restore(value,props.content,props.index);
+        
+        
+    }
+
+    const Fset = (e) =>{
+        setValue(e.target.value)
+        restore(value,props.content,props.index);
+    }
+
+    // onFocus={(e)=>set(e)}
     
     return(
         <div className ="title_box">
-            <input class="form-control form-control-lg" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)} onFocus={(e)=>set(e)} maxLength="100" autoFocus={true}/>
+            <input class="form-control form-control-lg" key = {props.title} type="text" defaultValue={props.title} onKeyUp = {(e)=>edit(e)}  maxLength="100" onFocus={(e)=>{Fset(e)}} onBlur={(e)=>{Bset(e)}} autoFocus={true}/>
             {/* <button className = "title_enter" onClick={()=>handleClick()}>保存</button> */}
         </div>
     );
