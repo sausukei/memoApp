@@ -35,7 +35,7 @@ const ListUI = (props) =>{
         
         let i = 0;
         for (i=0;i<props.content.length;i++){
-            const data = <MemoButton title={props.content[i].title+i} content={props.content[i].content}/>
+            const data = <MemoButton title={props.content[i].title} content={props.content[i].content}/>
             const content = props.content[i].content
             const title = props.content[i].title
             const index = props.content[i].index
