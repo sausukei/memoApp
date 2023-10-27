@@ -27,6 +27,8 @@ const ListUI = (props) =>{
            props.func(content);
            props.index(index);
            props.Key(title);
+           
+           
         //    console.log("(this is list)次の要素をストレージに保存します"+"key"+index+"title"+key+"content"+content)
             
         }
