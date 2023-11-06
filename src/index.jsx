@@ -74,9 +74,12 @@ const Frame = () => {
     }
 
     const del = () =>{
-      localStorage.removeItem(I-1);
-      setI(I-1);
-      console.log("del"+I);
+      if(I>1){
+        localStorage.removeItem(I-1);
+        setI(I-1);
+        console.log("del"+I);
+      }
+      
     }
 
   return (
